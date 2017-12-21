@@ -11,10 +11,19 @@ class Spritz
     public:
         Spritz();
         virtual ~Spritz();
+        /*
+        Interface function to create an r size hash
+        */
         std::vector<unsigned char> Hash(size_t r , std::vector<unsigned char> M) ;
+        /*
+        Interface function to absorb a value I
+        */
         void Absorb(const std::vector<unsigned char> I);
-        std::vector<unsigned char>  squeeze(int r) ;
-              void InitializeState() ;
+        /*
+        Interface function to squeeze out an r size output
+        */
+        std::vector<unsigned char>  squeeze(size_t r) ;
+        void InitializeState() ;
     protected:
 
     private:
@@ -31,7 +40,6 @@ class Spritz
                                //it would not be possible to input an Integer.
         void Whip(const int r) ;
         int gcd(int a, int b) ;
-
         void Swap(unsigned char* a,unsigned char* b);
         int i ; //using unsigned char as byte representation as argumented here:
         int j ; //https://stackoverflow.com/questions/20024690/is-there-byte-data-type-in-c

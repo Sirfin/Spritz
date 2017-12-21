@@ -120,7 +120,7 @@ do
 }
 
 
-std::vector<unsigned char> Spritz::squeeze(int r)
+std::vector<unsigned char> Spritz::squeeze(size_t r)
 {
 if  (a > 0 ){
     Shuffle() ;
