@@ -7,7 +7,6 @@ Spritz::Spritz()
 
 Spritz::~Spritz()
 {
-    //dtor
 }
 
 void Spritz::Swap(unsigned char* a, unsigned char* b)
@@ -102,7 +101,7 @@ for (int i = 0 ; i< I.size() ; i++){
     AbsorbByte(I[i]) ;
 }
 }
-int gcd(int a, int b) {
+int Spritz::gcd(int a, int b) {
     return b == 0 ? a : gcd(b, a % b);
 }
 void Spritz::Whip(const int r)

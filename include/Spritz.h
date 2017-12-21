@@ -30,6 +30,7 @@ class Spritz
         //we do not use std::string cause we want just the byte representation otherwise
                                //it would not be possible to input an Integer.
         void Whip(const int r) ;
+        int gcd(int a, int b) ;
 
         void Swap(unsigned char* a,unsigned char* b);
         int i ; //using unsigned char as byte representation as argumented here:
