@@ -122,22 +122,7 @@ if  (a > 0 ){
     }
     return P ;
 }
-std::vector<unsigned char> Spritz::Encrypt(std::vector<unsigned char>K, std::vector<unsigned char>M)
-{
-    this->InitializeState() ;
-    this->Absorb(K) ;
-    std::vector<unsigned char> C = squeeze(M.size()-1) ;
-    C.insert(C.begin(),M.begin(),M.end()); //C=M+Squeeze()
-    return C ;
-}
 
-/*std::vector<unsigned char> Spritz::Decrypt(std::vector<unsigned char>K, std::vector<unsigned char>C )
-{
-    this->InitializeState() ;
-    this->Absorb(K) ;
-    std::vector<unsigned char> M = squeeze(M.size()-1) ;
-    return M ;
-}*/
 std::vector<unsigned char> Spritz::Hash(size_t r, std::vector<unsigned char>M)
 {
     this->InitializeState() ;

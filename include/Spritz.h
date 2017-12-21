@@ -11,7 +11,6 @@ class Spritz
     public:
         Spritz();
         virtual ~Spritz();
-        std::vector<unsigned char> Encrypt(std::vector<unsigned char> K , std::vector<unsigned char> M) ;
         std::vector<unsigned char> Hash(size_t r , std::vector<unsigned char> M) ;
         void Absorb(const std::vector<unsigned char> I);
         std::vector<unsigned char>  squeeze(int r) ;
