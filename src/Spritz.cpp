@@ -112,7 +112,7 @@ for (int v = 0 ; v < r ;v++){
 }
 
 #if N == 256
-w = (w+2)&0xff;
+w = (w+2)%N;
 #else
 do
     w = w+1 ;
