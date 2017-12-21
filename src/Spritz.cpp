@@ -1,4 +1,4 @@
-#include "Spritz.h"
+#include "../include/Spritz.h"
 
 Spritz::Spritz()
 {
@@ -102,14 +102,24 @@ for (int i = 0 ; i< I.size() ; i++){
     AbsorbByte(I[i]) ;
 }
 }
-
+int gcd(int a, int b) {
+    return b == 0 ? a : gcd(b, a % b);
+}
 void Spritz::Whip(const int r)
 {
 for (int v = 0 ; v < r ;v++){
     Update() ;
 }
+
+#if N == 256
 w = (w+2)&0xff;
+#else
+do
+    w = w+1 ;
+    while(gcd(w,N) != 1) ;
+#endif
 }
+
 
 std::vector<unsigned char> Spritz::squeeze(int r)
 {
