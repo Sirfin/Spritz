@@ -5,7 +5,7 @@ using namespace std;
 void Test() ;
 int main()
 {
-    Test() ;
+    Test() ; //Test the vektors mentioned in the paper
 }
 
 void Test()
@@ -78,7 +78,6 @@ void Test()
         bool test = true ;
         for (int j = 0 ; j < 8 ; j++)
         {
-
             if (data[j] != BasicOutput[i].second[j])
             {
                 cout << std::dec<< "Fehler bei : output=" << (int)data[j] << " test=" << (int)BasicOutput[i].second[j] << endl ;

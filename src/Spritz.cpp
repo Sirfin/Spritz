@@ -9,11 +9,11 @@ Spritz::~Spritz()
 {
 }
 
-void Spritz::Swap(unsigned char* a, unsigned char* b)
+void Spritz::Swap(unsigned char& a, unsigned char& b)
 {
-    unsigned char temp = *a ;
-    *a = *b ;
-    *b = temp ;
+    unsigned char temp = a ;
+    a = b ;
+    b = temp ;
 }
 
 
@@ -35,7 +35,7 @@ void Spritz::Crush()
     for (int v = 0 ; v < (N/2); v++)
     {
         if (S[v] > S[N-1-v])
-            Swap(&S[v],&S[N-1-v]) ;
+            Swap(S[v],S[N-1-v]) ;
     }
 
 }
@@ -55,7 +55,7 @@ void Spritz::Update()
     i = (i + w) % N;
     j = (k + S[(j + S[i]) % N]) % N;
     k = (k + i + S[j]) %N;
-    Swap(&S[i], &S[j]) ;
+    Swap(S[i], S[j]) ;
 }
 
 unsigned char Spritz::Output()
@@ -90,7 +90,7 @@ void Spritz::AbsorbNibble(const unsigned char x)
     {
         Shuffle() ;
     }
-    Swap(&S[a], &S[N/2 + x ]) ;
+    Swap(S[a], S[N/2 + x ]) ;
     a = (a +1) %N;
 }
 
