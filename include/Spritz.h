@@ -15,8 +15,6 @@ class Spritz
     //using unsigned char as byte representation as argumented here:
     //https://stackoverflow.com/questions/20024690/is-there-byte-data-type-in-c
 
-
-
 public:
     Spritz();
     virtual ~Spritz();
@@ -33,7 +31,7 @@ public:
     */
     std::vector<unsigned char>  squeeze(size_t r) ;
     /*
-    Interface function to reset the state
+    Interface function to reset/init the state
     */
     void InitializeState() ;
 protected:

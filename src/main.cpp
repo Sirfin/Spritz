@@ -5,6 +5,15 @@ using namespace std;
 void Test() ;
 int main()
 {
+    std::string str = "ABC";
+    std::vector<unsigned char> data(str.begin(),str.end()) ;
+    Spritz spritz ;
+    spritz.Absorb(data) ;
+    data = spritz.squeeze(32);
+    for (int i = 0 ; i < data.size() ; i++){
+        cout << std::hex << (int)data[i];
+    }
+    cout << endl ;
     Test() ; //Test the vektors mentioned in the paper
 }
 
